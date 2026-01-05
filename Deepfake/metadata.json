@@ -1,0 +1,5 @@
+{
+  "name": "VeriLens AI - Deepfake Detector",
+  "description": "A high-performance deepfake and AI-generated content detection platform using Gemini 3.0 Flash to identify synthetic media and LLM-written text.",
+  "requestFramePermissions": []
+}
