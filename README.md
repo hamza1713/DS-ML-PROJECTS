@@ -1,72 +1,37 @@
-<div align="center">
+# Airline Customer Satisfaction — Data Science & ML
 
-# 📊 DS-ML-PROJECTS
+An applied classification project exploring how passenger feedback and flight attributes relate to customer satisfaction.
 
-### Data Science & Classical Machine Learning Portfolio
+**[Open the notebook](Customer_Satisfaction_prediction/Investisco_airline.ipynb) · [Dataset](Customer_Satisfaction_prediction/airline.csv) · [My portfolio](https://github.com/hamza1713/hamza1713)**
 
-[![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
-[![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-F37626?style=for-the-badge&logo=jupyter&logoColor=white)](https://jupyter.org)
-[![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)](https://scikit-learn.org)
+## What the notebook implements
 
-</div>
+- Inspect the dataset, remove rows with missing values, and encode categorical variables.
+- Split predictors and target into training and held-out test sets (75% / 25%, random state 0).
+- Tune an **XGBoost classifier** with five-fold cross-validation and F1-based model selection.
+- Evaluate accuracy, precision, recall, F1, a confusion matrix, and feature importance.
 
----
+**Stack:** Python · pandas · NumPy · scikit-learn · XGBoost · Matplotlib · Jupyter
 
-## Overview
-
-This repository contains hands-on **Data Science and Machine Learning** projects focused on classical ML techniques, exploratory data analysis, feature engineering, model training, and business-oriented evaluation.
-
-It serves as a foundation for understanding core ML workflows before moving into deep learning and LLM systems.
-
-## 📦 Projects
-
-### ✈️ Investisco Airline Customer Satisfaction
-**Notebook:** `investisco_airline_customer_satisfaction.ipynb`
-
-- Predicts airline customer satisfaction levels using supervised learning
-- Full pipeline: data cleaning → EDA → feature engineering → modeling → evaluation
-- Models explored: Logistic Regression, Random Forest, Gradient Boosting
-- Metrics: Accuracy, Precision, Recall, F1-score, Confusion Matrix
-- Business insights and recommendations derived from model outputs
-
-*(More projects coming soon — stay tuned!)*
-
-## 💡 Skills Demonstrated
-
-- Exploratory Data Analysis & Visualization
-- Feature Engineering & Preprocessing
-- Supervised Learning (classification)
-- Model Evaluation & Interpretation
-- Clear, reproducible Jupyter notebooks
-
-## 🛠️ How to Use
+## Run locally
 
 ```bash
 git clone https://github.com/hamza1713/DS-ML-PROJECTS.git
 cd DS-ML-PROJECTS
-
-# Recommended: create a virtual environment
-python -m venv venv
-source venv/bin/activate   # or venv\Scripts\activate on Windows
-
-pip install pandas numpy scikit-learn matplotlib seaborn jupyter
+python -m venv .venv
+# Activate .venv using the command for your operating system.
+python -m pip install pandas numpy scikit-learn xgboost matplotlib jupyter
 jupyter notebook
 ```
 
-Open the notebooks and run the cells sequentially.
+Open `Customer_Satisfaction_prediction/Investisco_airline.ipynb`. Its loading cell currently uses the Colab path `/content/airline.csv`; for a local notebook session, change it to `airline.csv` so it reads the CSV beside the notebook. Hyperparameter search may take time to run.
 
-## 📌 Related Work
+## Interpretation and limitations
 
-For production-grade AI systems, check out my other repositories:
+The executable training workflow fits XGBoost. The final comparison table also contains fixed Decision Tree and Random Forest reference scores; those models are not trained in this notebook and the table is not a reproduced head-to-head benchmark. Recorded outputs are historical notebook results, not a fresh run or a production performance guarantee.
 
-- [Enterprise RAG Chatbot with RBAC](https://github.com/hamza1713/Enterprise-RAG-Chatbot-with-Role-Base-Access-Control-)
-- [Factscope-AI (Claim Verification)](https://github.com/hamza1713/Factscope-AI)
-- [Autonomous Social Media Brand Manager (Multi-Agent)](https://github.com/hamza1713/Autonomous-Social-Media-Brand-Manager)
+For a stronger evaluation, add dataset provenance and usage terms, pinned dependencies, stratified splits, reproducible baselines, and a discussion of error costs. Predicted satisfaction does not establish that an intervention will improve retention.
 
----
+## Related work
 
-<div align="center">
-
-Part of **Hamza Ali**'s AI/ML Portfolio · Building from classical ML to production AI systems
-
-</div>
+[FinSight: RAG and SQL](https://github.com/hamza1713/Enterprise-RAG-Chatbot-with-Role-Base-Access-Control-) · [AI Code Review Agent](https://github.com/hamza1713/AI-Code-Review-Agent)
